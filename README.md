@@ -1,5 +1,7 @@
 # Gaudiamus css starter
 
+![starter](img/gaudiamus-starter.png)
+
 ## Installation
 
 1. clone or fork
