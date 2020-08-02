@@ -1,45 +1,51 @@
 /*
-* All gaudiamus css variables
+*  Gaudiamus 1.1 variables
 */
 
 /* Grid */
-//$breakpoints: ("md":768px,"lg":1024px);
+$columns: 12;
+$items: 6;
+$breakpoint-map: ("md":768px,"lg":1024px);
 
 
-/* Spacing */
-//$baseSpacing: 20px;
-//$spacingUnit: 'rem';
-//$spacingStep: .25;
-//$numSpacingUnits: 5;
+/* Spacing & utility generator */
+$baseSpacing: 20px;
+$spacingUnit: 'rem';
+$spacingStep: .25;
+$numSpacingUnits: 5;
+
+$shorthand-map: ("t":"top","b":"bottom","r":"right","l":"left","x":(1:"left",2:"right"),"y":(1:"top",2:"bottom"));
+$property-map: ("m":"margin","p":"padding");
 
 
 /* Colors */
-//$primaryColor: #258cc7;
-//$accentColor: #21d593;
-//$successColor: #1f921f;
-//$warningColor: #c92d2d;
-//$gray: rgba(0,0,0,.2);
-//$white: #e8e5e5;
-//$black: #101010;
+$primaryColor: #258cc7;
+$accentColor: #21d593;
+$successColor: #1f921f;
+$warningColor: #c92d2d;
+$gray: rgba(0,0,0,.2);
+$white: #e8e5e5;
+$black: #101010;
 
-//$color-class-map:("bg":"background-color","text":"color","b":"border-color");
+$color-class-map:("bg":"background-color","text":"color","b":"border-color");
 
-//$color-map:(
-//  "primary":$primaryColor,
-//  "accent":$accentColor,
-//  "success":$successColor,
-//  "warning":$warningColor,
-//  "transparent":transparent,
-//  "gray": $gray,
-//  "white": $white,
-//  "black": $black
-//);
-//$state-map:("focus","hover","active");
+$color-map:(
+  "primary":$primaryColor,
+  "accent":$accentColor,
+  "success":$successColor,
+  "warning":$warningColor,
+  "transparent":transparent,
+  "gray": $gray,
+  "white": $white,
+  "black": $black
+);
+$state-map:("focus","hover","active");
 
 
-/* Shading & borders*/
+/* Shading & borders */
 
-//$depth: 3;
-//$spread: 4px;
+$depth: 3;
+$spread: 4px;
 
-//$fontSizes:("sm":3, "md":5, "lg":7, "xl":9, "xxl":12);
+/* Typography */
+$fontSize-map:("sm":3, "default":4, "md":5, "lg":7, "xl":9, "xxl":12);

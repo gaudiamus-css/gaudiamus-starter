@@ -16,6 +16,6 @@
     "sass": "^1.26.10"
   },
   "dependencies": {
-    "gaudiamus-css": "^1.0.0"
+    "gaudiamus-css": "^1.1.0"
   }
 }
