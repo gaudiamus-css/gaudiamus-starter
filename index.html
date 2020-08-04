@@ -51,6 +51,10 @@
       Don't forget to head over to <a target="_blank" class="text-primary text-decoration-none" href="https://html5boilerplate.com/">HTML5 Boilerplate</a>
       and support their awesome work. <span class="font-sm">(and acknowledge their LICENSE.txt in this package)</span>
     </p>
+    <!--  using fillr (https://github.com/sroehrl/fillr) to showcase grid    -->
+    <div class="grid-12 md:grid-6-6 lg:grid-3-3-3-3">
+      <p class="m-1 p-1 b-1 b-rounded"><strong>SIC! </strong>{{lorem.rows(3).loop(4)}}</p>
+    </div>
   </div>
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
@@ -62,6 +66,9 @@
     ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/fillr@1.0.0/fillr.min.js" crossorigin="anonymous" defer ></script>
+
 </body>
 
 </html>
