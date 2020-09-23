@@ -13,9 +13,9 @@
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
-    "sass": "^1.26.10"
+    "sass": "^1.26.11"
   },
   "dependencies": {
-    "gaudiamus-css": "^1.2.0"
+    "gaudiamus-css": "^1.2.1"
   }
 }
