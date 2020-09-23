@@ -1,33 +1,38 @@
 /*
-*  Gaudiamus 1.1 variables
+*  Gaudiamus 1.2 variables
 */
 
 /* Grid */
-$columns: 12;
-$items: 6;
-$breakpoint-map: ("md":768px,"lg":1024px);
+$grid-container-prefix: 'grid';
+$columns: 12 !default;
+$items: 6 !default;
+$breakpoint-map: ("md":768px,"lg":1024px) !default;
 
 
 /* Spacing & utility generator */
-$baseSpacing: 20px;
-$spacingUnit: 'rem';
-$spacingStep: .25;
-$numSpacingUnits: 5;
+$baseSpacing: 20px !default;
+$spacingUnit: 'rem' !default;
+$spacingStep: .25 !default;
+$numSpacingUnits: 5 !default;
+
 
 $shorthand-map: ("t":"top","b":"bottom","r":"right","l":"left","x":(1:"left",2:"right"),"y":(1:"top",2:"bottom"));
 $property-map: ("m":"margin","p":"padding");
+$position-map:("relative","absolute","fixed");
+$height-width-unit-map:("p":"%");
+$height-width-value-map:("25", "50", "75", "100");
 
 
 /* Colors */
-$primaryColor: #258cc7;
-$accentColor: #21d593;
-$successColor: #1f921f;
-$warningColor: #c92d2d;
-$gray: rgba(0,0,0,.2);
-$white: #e8e5e5;
-$black: #101010;
+$primaryColor: #258cc7 !default;
+$accentColor: #21d593 !default;
+$successColor: #1f921f !default;
+$warningColor: #c92d2d !default;
+$gray: rgba(0,0,0,.2) !default;
+$white: #e8e5e5 !default;
+$black: #101010 !default;
 
-$color-class-map:("bg":"background-color","text":"color","b":"border-color");
+$color-class-map:("bg":"background-color","text":"color","b":"border-color") !default;
 
 $color-map:(
   "primary":$primaryColor,
@@ -38,14 +43,19 @@ $color-map:(
   "gray": $gray,
   "white": $white,
   "black": $black
-);
+) !default;
 $state-map:("focus","hover","active");
 
 
 /* Shading & borders */
 
-$depth: 3;
-$spread: 4px;
+$depth: 3 !default;
+$spread: 4px !default;
+
+
 
 /* Typography */
-$fontSize-map:("sm":3, "default":4, "md":5, "lg":7, "xl":9, "xxl":12);
+
+$fontSize-map:("sm":3, "default":4, "md":5, "lg":7, "xl":9, "xxl":12) !default;
+$decoration-map:("underline","none");
+$weight-map:("light":200,"strong":700);
