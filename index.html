@@ -7,29 +7,51 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
 
-  <link rel="stylesheet" href="scss/index.scss">
+  <link rel="stylesheet" href="my-css.css">
 
   <meta name="theme-color" content="#fafafa">
+  <style>
+    button:focus{
+      outline: none;
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- Add your site or application content here -->
-  <div class="container">
-    <h1>Hello world</h1>
+<!-- Add your site or application content here -->
+<div class="container"
+     x-data="{
+        showIndex:localStorage.showIndex||0,
+        playground:localStorage.playground||'<p class=\'text-primary\'>test me<\/p>',
+        reload: ()=>{ window.location.reload() }
+      }"
+     x-init="$watch('playground', value => localStorage.setItem('playground',value)); $watch('showIndex', value => localStorage.setItem('showIndex',value))"
+>
+  <h1>Hello world</h1>
 
-    <h2>Gaudiamus base setup</h2>
+
+  <div class="m-y-3">
+    <button type="button" :class="{'bg-primary-dark text-white':showIndex==0}" class="bg-transparent b-1 b-rounded-3 b-primary-50 text-primary font-md" @click="showIndex=0">
+      start
+    </button>
+    <button type="button" :class="{'bg-primary-dark text-white':showIndex==1}" class="bg-transparent b-1 b-rounded-3 b-primary-50 text-primary font-md" @click="showIndex=1">
+      playground
+    </button>
+    <button type="button" class="bg-transparent b-1 b-rounded-3 b-primary-50 text-primary font-md" @click="reload()">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="20px" height="20px">
+        <path d="M0 0h24v24H0z" fill="none"/>
+        <path
+          d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46C8.97 19.54 10.43 20 12 20c4.42 0 8-3.58 8-8h3l-4-4zM6 12c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46C15.03 4.46 13.57 4 12 4c-4.42 0-8 3.58-8 8H1l4 4 4-4H6z"/>
+      </svg>
+    </button>
+  </div>
+  <template x-if="showIndex==0">
     <div class="box">
-      <p >
+      <h2>Gaudiamus base setup</h2>
+      <p>
         In the <strong>scss folder</strong>, you will find 3 files:
       </p>
       <ul>
@@ -39,35 +61,55 @@
       </ul>
       <p>
         <strong>my-vars.scss</strong> contains all variables you can overwrite (commented out) <br>
-        <strong>compositions.scss</strong> is basically "your-style". It is an example of how to build your own style guide. <br>
-        <strong>index.scss</strong> takes care of loading files in the correct order and the only file that needs to be compiled.
+        <strong>compositions.scss</strong> is basically "your-style". It is an example of how to build your own style
+        guide. <br>
+        <strong>index.scss</strong> takes care of loading files in the correct order and the only file that needs to be
+        compiled.
       </p>
-      <p>That's it. It's that simple!</p>
+      <h2>Developing your solution</h2>
+      <p>
+        When running this page with <code>npm start</code>, you can rebuild the CSS by using the refresh icon at the top while
+        you are working on your SCSS.
+      </p>
+      <p>
+         Test your changes in the <a href="#" class="text-decoration-underline hover:text-accent text-accent-dark" @click.prevent="showIndex=1">playground</a>
+        by supplying html (and classes, I suppose).
+      </p>
+      <p>
+        Your final output will be <strong>"my-css.css"</strong> within this project.
+      </p>
     </div>
-    <div class="box">
-      run <code>"npm run dev"</code>
+  </template>
+  <div x-show="showIndex==1">
+    <div class="grid-6-6 box">
+      <div class="b-r-1">
+        <h4>Test</h4>
+        <textarea x-model="playground" class="w-75p" rows="10">
+
+          </textarea>
+
+      </div>
+      <div class="output m-l-4">
+        <h4>Output</h4>
+        <div x-html="playground"></div>
+      </div>
     </div>
-    <p class="font-md">
-      Don't forget to head over to <a target="_blank" class="text-primary text-decoration-none" href="https://html5boilerplate.com/">HTML5 Boilerplate</a>
-      and support their awesome work. <span class="font-sm">(and acknowledge their LICENSE.txt in this package)</span>
-    </p>
     <!--  using fillr (https://github.com/sroehrl/fillr) to showcase grid    -->
+    <h3>Grid breakpoint test: grid-12 md:grid-6-6 lg:grid-3-3-3-3</h3>
     <div class="grid-12 md:grid-6-6 lg:grid-3-3-3-3">
       <p class="m-1 p-1 b-1 b-rounded"><strong>SIC! </strong>{{lorem.rows(3).loop(4)}}</p>
     </div>
   </div>
-  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
 
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/fillr@1.0.0/fillr.min.js" crossorigin="anonymous" defer ></script>
+
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+
+<script src="https://cdn.jsdelivr.net/npm/fillr@1.0.0/fillr.min.js" crossorigin="anonymous" defer></script>
 
 </body>
 
