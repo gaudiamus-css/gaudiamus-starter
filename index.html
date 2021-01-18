@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Gaudiamus based on HTML5 Boilerplate</title>
+  <title>Gaudiamus Starter KIT</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -30,7 +30,7 @@
       }"
      x-init="$watch('playground', value => localStorage.setItem('playground',value)); $watch('showIndex', value => localStorage.setItem('showIndex',value))"
 >
-  <h1>Hello world</h1>
+  <h1>BYO CSS-design system</h1>
 
 
   <div class="grid-6-6 m-y-3">
@@ -59,12 +59,13 @@
     <div class="box">
       <h2>Gaudiamus base setup</h2>
       <p>
-        In the <strong>scss folder</strong>, you will find 3 files:
+        In the <strong>scss folder</strong>, you will find 4 files:
       </p>
       <ul>
         <li>index.scss</li>
         <li>my-vars.scss</li>
         <li>compositions.scss</li>
+        <li>extend.scss</li>
       </ul>
       <p>
         <strong>my-vars.scss</strong> contains all variables you can overwrite (commented out) <br>
@@ -84,6 +85,12 @@
       </p>
       <p>
         Your final output will be <strong>"my-css.css"</strong> within this project.
+      </p>
+      <h3>Compiling with webpack & co</h3>
+      <p>
+        Due to a compilation issue with the current version of node-sass, this starter-kit compiles with sass instead of node-sass.
+        Although way slower (sorry!), it does fulfill the official dart-sass implementation. If you hit any edge-cases, look into the differences between
+        Dart SASS and Ruby SASS.
       </p>
     </div>
   </template>

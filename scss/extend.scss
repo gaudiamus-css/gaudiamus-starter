@@ -1,0 +1,10 @@
+@use "../node_modules/gaudiamus-css/scss/components/operations" as ops;
+
+// see https://gaudiamus-css.github.io/advanced.html
+@each $colorName, $colorValue in $color-map{
+  .card-#{$colorName}{
+    @extend .b-rounded-2, .b-1, .p-3;
+    border-color: $colorValue;
+  }
+  @include ops.generate-states("card-#{$colorName}", $state-map);
+}

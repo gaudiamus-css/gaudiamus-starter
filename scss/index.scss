@@ -6,6 +6,16 @@
 // gaudiamus
 @import "../node_modules/gaudiamus-css/scss/index";
 
+// or import on a basis whenever needed
+//@import "../node_modules/gaudiamus-css/scss/components/grid";
+//@import "../node_modules/gaudiamus-css/scss/components/colors";
+//@import "../node_modules/gaudiamus-css/scss/components/spacing";
+//@import "../node_modules/gaudiamus-css/scss/components/shading";
+//@import "../node_modules/gaudiamus-css/scss/components/typography";
+
 // compositions
 @import "compositions";
+
+// extending / advanced
+//@import "extend";
 
