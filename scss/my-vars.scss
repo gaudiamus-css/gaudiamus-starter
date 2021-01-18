@@ -8,6 +8,9 @@ $grid-container-prefix: 'grid';
 $columns: 12;
 $items: 6;
 $breakpoint-map: ("md":768px,"lg":1024px);
+$placement-key: "place";
+$placement-map: ("x":"justify-self", "y":"align-self");
+$placement-properties: ("start":"start", "end":"end", "center":"center", "stretch":"stretch") ;
 
 
 
@@ -21,6 +24,7 @@ $numSpacingUnits: 5;
 $shorthand-map: ("t":"top","b":"bottom","r":"right","l":"left","x":(1:"left",2:"right"),"y":(1:"top",2:"bottom"));
 $property-map: ("m":"margin","p":"padding");
 $position-map:("relative","absolute","fixed");
+$position-key:"position";
 
 $height-width-unit-map:("p":"%");
 $height-width-value-map:("25", "50", "75", "100");
@@ -28,7 +32,7 @@ $height-width-value-map:("25", "50", "75", "100");
 
 
 /* Colors */
-$primaryColor: #258cc7;
+$primaryColor: #15eece;
 $accentColor: #21d593;
 $successColor: #1f921f;
 $warningColor: #c92d2d;
@@ -85,7 +89,8 @@ $border-key: "b";
 $rounded-key: "rounded";
 $raise-key: "raise";
 
-
+$cursor-key:"cursor";
+$cursor-map:("pointer":"pointer");
 
 /* Typography */
 
@@ -99,3 +104,10 @@ $fontSize-map:(
 );
 $decoration-map:("underline","none");
 $weight-map:("light":200,"strong":700);
+
+/* Display */
+
+$display-key: "d";
+$display-map: ("hidden":"none", "flex":"flex", "block":"block");
+$flex-key: "f";
+$flex-map: ("1":"1");

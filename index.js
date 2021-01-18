@@ -1,19 +1,16 @@
 const http = require('http');
 const fs = require('fs');
-const sass = require('node-sass');
-
+const sass = require('sass');
 
 function renderScss(){
   const renderedScss = sass.renderSync({
     file: 'scss/index.scss',
-    includePaths: [__dirname +'/scss'],
+    // includePaths: [__dirname +'/scss'],
     outFile: __dirname + '/my-css.css',
     outputStyle: 'compressed'
   })
-
   fs.writeFileSync(__dirname + '/my-css.css', renderedScss.css);
 }
-
 
 
 const server = http.createServer((req, res)=>{
